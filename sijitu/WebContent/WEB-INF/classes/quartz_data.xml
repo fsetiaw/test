@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<job-scheduling-data
+    xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd"
+    version="1.8">
+
+ 
+	<schedule>
+        <job>
+        	<!--  job-detail-->
+            	<name>OverviewMhsCuti</name>
+            	<job-class>quartz.overview.trlsm.OverviewTrlsmMhs</job-class>
+            	<job-data-map>
+				
+                <entry>
+                    <key>url</key>
+                    <value>hotdog</value>
+                </entry>
+                <entry>
+
+                    <key>dressing-list</key>
+                    <value>ketchup,mayo</value>
+                </entry>
+            </job-data-map>
+        </job>
+        <trigger>
+            <cron>
+                <name>OverviewMhsCuti</name>
+                <job-name>OverviewMhsCuti</job-name>
+                <!--  0 0 6/12 1/1 * ? * -->
+                <cron-expression>0 0 6/12 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>
+
+    <schedule>
+        <job>
+            <name>updTableRule</name>
+            <job-class>quartz.overview.addhoc.UpdateTableRules</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>updTableRule</name>
+                <job-name>updTableRule</job-name>
+                                <!--  cron-expression>0 0 0/3 1/1 * ? *</cron-expression-->
+                                <!-- 0 43 1 1/1 * ? * -->
+                <cron-expression>0 9 4 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>   
+    <schedule>
+        <job>
+            <name>updTableDaftarUlang</name>
+            <job-class>quartz.overview.addhoc.MaintainanceTabelDaftarUlang</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>updTableDaftarUlang</name>
+                <job-name>updTableDaftarUlang</job-name>
+                                <!--  cron-expression>0 0 0/6 1/1 * ? *</cron-expression-->
+                                <!-- 0 43 1 1/1 * ? * -->
+                <cron-expression>0 0 0/3 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>
+    <schedule>
+        <job>
+            <name>UpdateTableChitChatMember</name>
+            <job-class>quartz.overview.addhoc.UpdateTableChitChatMember</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>UpdateTableChitChatMember</name>
+                <job-name>UpdateTableChitChatMember</job-name>
+                                <!--  cron-expression>0 0 0/3 1/1 * ? *</cron-expression-->
+                                <!-- 0 43 1 1/1 * ? * -->
+                <cron-expression>0 56 3 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>   
+    <schedule>
+        <job>
+            <name>SinkProdiNilaiTunda</name>
+            <job-class>quartz.overview.addhoc.CekNilaiTunda</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>SinkProdiNilaiTunda</name>
+                <job-name>SinkProdiNilaiTunda</job-name>
+                <cron-expression>0 0 2 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>       
+    <schedule>
+        <job>
+            <name>SinkTrnlmWithTrlsm</name>
+            <job-class>quartz.overview.addhoc.SincTrlsmDgnTrnlm</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>SinkTrnlmWithTrlsm</name>
+                <job-name>SinkTrnlmWithTrlsm</job-name>
+                <cron-expression>0 0 3 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>  
+    <schedule>
+        <job>
+            <name>FixErrorKdkmktrnlmVsMakul</name>
+            <job-class>quartz.overview.addhoc.FixErrorKdkmktrnlmMakul</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>FixErrorKdkmktrnlmVsMakul</name>
+                <job-name>FixErrorKdkmktrnlmVsMakul</job-name>
+                <cron-expression>0 30 4 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>    
+    <schedule>
+        <job>
+            <name>SyncTrnlmCuidWithClasspool</name>
+            <job-class>quartz.overview.addhoc.SyncCuidTrnlmVsClasspool</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>SyncTrnlmCuidWithClasspool</name>
+                <job-name>SyncTrnlmCuidWithClasspool</job-name>
+                <cron-expression>0 15 3 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>       
+    <schedule>
+        <job>
+            <name>maintenanceTabelTopikPengajuan</name>
+            <job-class>quartz.overview.addhoc.MaintainanceTabelTopikPengajuan</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>maintenanceTabelTopikPengajuan</name>
+                <job-name>maintenanceTabelTopikPengajuan</job-name>
+                <cron-expression>0 0 11/6 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>
+    <schedule>
+        <job>
+            <name>CekNpmLulusTrlsmVsPengajuan</name>
+            <job-class>quartz.overview.addhoc.CekNpmLulusanDiTrlsmVsPengajuan</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>CekNpmLulusTrlsmVsPengajuan</name>
+                <job-name>CekNpmLulusTrlsmVsPengajuan</job-name>
+                <cron-expression>0 0 1/12 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>  
+    <schedule>
+        <job>
+            <name>updateNotifikasiControllerSpmi</name>
+            <job-class>quartz.overview.spmi.UpdateTableOverviewSpmi</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>updateNotifikasiControllerSpmi</name>
+                <job-name>updateNotifikasiControllerSpmi</job-name>
+                <cron-expression>0 52 20 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>   
+    <schedule>
+        <job>
+            <name>systemMaintenance</name>
+            <job-class>quartz.overview.addhoc.SystemGeneralMaintenance</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>systemMaintenance</name>
+                <job-name>systemMaintenance</job-name>
+                <cron-expression>0 48 23 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>   
+    
+    
+    <schedule>
+        <job>
+            <name>MaintainanceStrukturalTable</name>
+            <job-class>quartz.overview.addhoc.MaintainanceStrukturalTable</job-class>
+			<durability>false</durability>  
+            <recover>false</recover>
+        </job>
+        <trigger>
+            <cron>
+                <name>MaintainanceStrukturalTable</name>
+                <job-name>MaintainanceStrukturalTable</job-name>
+                <!-- cron-expression>0 0 3/6 1/1 * ? *</cron-expression -->
+                <cron-expression>0 35 3 1/1 * ? *</cron-expression>
+            </cron>
+        </trigger>
+    </schedule>  
+</job-scheduling-data>
